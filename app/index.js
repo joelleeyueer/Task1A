@@ -5,13 +5,13 @@ const ejs = require('ejs');
 const app = express();
 
 //Static
-// app.use(express.static('public')); <-- cannot use this as it is not a Nodejs path module to
-// access relative path of the folder
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static('public'));
+// cannot use this as it is not a Nodejs path module to access relative path of the folder
+// app.use(express.static(path.join(__dirname, 'public')));
 app.engine('html', ejs.renderFile);
 app.set('view engine', 'html');
 
-const PORT = 8080;
+const PORT = 3000;
 const HOST = '0.0.0.0';
 
 app.get('/', (req, res) => {
